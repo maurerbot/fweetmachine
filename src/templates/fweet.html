@@ -1,0 +1,52 @@
+<h1 class="font-extrabold text-5xl">FWEET</h1>
+<br/>
+<table class="table-fixed border-collapse border border-black-800">
+  <tbody>
+    <tr>
+      <td class="w-1/6 font-extrabold">To:</td>
+      <td class="w-1/3">{{ tweet['mention_users'][tweet['fax_username']]['name'] }} (@{{ tweet['fax_username']}})</td>
+      <td class="border border-black-800"></td>
+      <td class="w-1/6 font-extrabold">From:</td>
+      <td class="w-1/3">{{tweet['name']}} (@{{ tweet['username']}})</td>
+    </tr>
+    <tr>
+      <td class="w-1/6 font-extrabold">Fax:</td>
+      <td class="w-1/3">{{ tweet['fax_number']}}</td>
+      <td class="border border-black-800"></td>
+      <td class="w-1/6 font-extrabold">Pages:</td>
+      <td class="w-1/3">1</td>
+    </tr>
+    <tr>
+      <td class="w-1/6 font-extrabold">Subject:</td>
+      <td class="w-1/3"></td>
+      <td class="border border-black-800"></td>
+      <td class="w-1/6 font-extrabold">Date:</td>
+      <td class="w-1/3">{{ tweet['created_at'] }}</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<div class="text-3xl">
+    <blockquote class="twitter-tweet">
+        <p class="my-4" lang="en" dir="ltr">{{ tweet['content'] }}</p>
+        {% for media in tweet['media'] %}
+        <div><img style="max-height: 750px;" src="{{ media['url'] }}"/></div>
+        {% endfor %}
+        <span class=""><img class="rounded-full h-12 w-12 inline" src="{{ tweet['author_profile_pic'] }}" /> {{ tweet['author_name'] }} ({{ tweet['author_username'] }})</span>
+        <div class="pb-2 my-4">
+            <span class="mr-8"><span class="text-grey-dark hover:no-underline hover:text-blue-light"><i
+                        class="fas fa-comments fa-lg mr-2"></i> {{ tweet['author_public_metrics.retweet_count'] }}</span></span>
+            <span class="mr-8"><span class="text-grey-dark hover:no-underline hover:text-green"><i
+                        class="fas fa-retweet fa-lg mr-2"></i> {{ tweet['author_public_metrics.reply_count']
+                    }}</span></span>
+            <span class="mr-8"><span class="text-grey-dark hover:no-underline hover:text-red"><i
+                        class="fa fa-heart fa-lg mr-2"></i> {{ tweet['author_public_metrics.like_count']
+                    }}</span></span>
+        </div>
+    </blockquote>
+    <div class="flex-none w-16 h-16"></div>
+</div>
+
+<!-- TODO: sponsor section -->
+
+<div class="absolute -bottom-0">Powered by @fweetmachine.<br/>To sponsor or support FweetMachine, please visit https://fweet.io</div>

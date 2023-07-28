@@ -1,0 +1,12 @@
+requests==2.25.1
+google-cloud-storage==1.37.1
+TwitterAPI==2.7.1
+telnyx==1.3.0
+lxml==4.6.3
+pandas==1.2.4
+WeasyPrint==52.5
+jinja2==2.11.3
+mypy
+Scrapy==2.5.0
+pdf2image==1.14.0
+phonenumbers==8.12.21

@@ -1,0 +1,10 @@
+.ipynb_checkpoints
+.pdf
+.png
+*venv
+*env
+.vscode
+workspace
+*.egg-info
+src/secret/*
+.kubelt
